@@ -1,0 +1,9 @@
+textilove = ("I love:")
+textkaynco = ("Kayn & Co!") 
+
+function printCenter( mon, text )
+ local x, y = mon.getSize()
+ mon.setCursorPos( x/2 - (#text / 2), 1)
+ mon.write(textilove)
+ mon.write(textkaynco)
+end
