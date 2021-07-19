@@ -1,0 +1,17 @@
+print("I Love: Started on Monitor!")
+	function DisplayTime()
+		local monitor = peripheral.find("monitor")
+		
+		ilove = ("I Love")
+		kaynco = ("Kayn & Co!")
+
+		monitor.clear()
+		monitor.setCursorPos(14,4)
+		monitor.write(ilove)
+		monitor.setCursorPos(14,6)
+		monitor.write(kaynco)
+		end
+	while true do
+	DisplayTime()
+	sleep(1)
+	end
