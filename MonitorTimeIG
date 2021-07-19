@@ -1,0 +1,22 @@
+print("Time Command: Started on Monitor!")
+	function DisplayTime()
+		local monitor = peripheral.find("monitor")
+
+		local day = os.day()
+		local time = os.time()
+		local formattedTime = textutils.formatTime( time, false )
+
+		daystring = "Day: " .. day
+		timestring = "Time: " .. formattedTime
+
+		monitor.setTextScale(2)
+		monitor.clear()
+		monitor.setCursorPos(1,1)
+		monitor.write(daystring)
+		monitor.setCursorPos(1,3)
+		monitor.write(timestring)
+		end
+	while true do
+	DisplayTime()
+	sleep(1)
+	end
