@@ -1,0 +1,6 @@
+local function center(str,ln)
+  local maxX,maxY = term.getSize()
+  term.setCursorPos((maxX/2)-(#str/2),ln)
+  print(str)
+end
+center("I Love Kayn & Co!",2)
