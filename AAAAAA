@@ -1,0 +1,13 @@
+--this function will print the text in the centre of the current line
+local printcentred =
+function(text)
+local maxw, maxh = term.getSize() --screen dimensions
+local curx, cury = term.getCursorPos() --cursor pos
+term.setCursorPos((maxw-#text)/2,cury) --set it to the point where write will make the text centred
+term.write(text) --write the text
+term.setCursorPos(curx,cury+1) --return the cursor to the same position on the next line
+end
+local maxw, maxh = term.getSize() --screen dimensions
+term.setCursorPos(1,math.floor(maxh/2))--set cursor to the start of the upper middle line
+printcentred("I Love")--print centred on that line
+printcentred("Kayn & Co!")--print centred on the next line
