@@ -1,0 +1,17 @@
+--this function will print the text in the centre of the current line of the monitor connected on the specified side
+local monitorprintcentred = function(text, side)
+local monitor = peripheral.find("monitor")
+local maxw, maxh = monitor.getSize() --screen dimensions
+local curx, cury = monitor.getCursorPos() --cursor pos
+
+monitor.setCursorPos((maxw-#text)/2,cury) --set it to the point where write will make the text centred
+monitor.write(text) --write the text
+monitor.setCursorPos(curx,cury+1) --return the cursor to the same position on the next line
+end
+
+local monitor = peripheral.wrap("left") -- makes 'monitor' refer to the monitor on the left side
+local maxw, maxh =monitor.getSize() --screen dimensions
+monitor.setCursorPos(1,math.floor(maxh/2))--set cursor to the start of the upper middle line
+
+monitorprintcentred("I Love","left")--print centred on that line
+monitorprintcentred("Boobies!","left")--print centred on the next line
