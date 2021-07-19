@@ -1,0 +1,16 @@
+local monitorprintcentred = function(text, side)
+local monitor = peripheral.find("monitor")
+local maxw, maxh = monitor.getSize()
+local curx, cury = monitor.getCursorPos()
+
+monitor.setCursorPos((maxw-#text)/2,cury)
+monitor.write(text)
+monitor.setCursorPos(curx,cury+1)
+end
+
+local mon = peripheral.wrap("left")
+local maxw, maxh = mon.getSize()
+mon.setCursorPos(1,math.floor(maxh/2))
+
+mon("I Love","left")
+mon("Boobies!","left")
